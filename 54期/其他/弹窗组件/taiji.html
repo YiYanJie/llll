@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+    <!--声明当前页面的编码格式 国际编码 UTF-8	中文编码 GBK-->
+    <META charset="UTF-8">
+    <!--声明当前页面的三要素-->
+    <META NAME="Keywords" CONTENT="太极图,旋转">
+    <META NAME="Description" CONTENT="这是一个太极旋转小组件">
+    <TITLE>太极旋转</TITLE>
+    <!--样式css 修饰 衣服 化妆品-->
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        body,html{
+            width:100%;height:100%;overflow:hidden;
+            perspective:1000px;/*摄像头*/
+            transform-style:preserve-3d;/*让子元素在3D空间占据位置*/
+        }
+        #first{
+            position:relative;
+            left:40%;
+            top:30%;
+            width:200px;
+            height:200px;
+            border:1px solid #333;
+            transform-origin:center;/*设置旋转基点:底边中点*/
+            border-radius:50%;
+            box-shadow:2px 2px 2px #333;
+            animation-delay:1s;
+            animation:go1 1s;
+            animation-timing-function:ease-in;/*渐显渐隐效果，先加速再减速 */
+            animation-iteration-count: infinite;/*动画次数*/
+            animation-fill-mode:both;/*元素动画同时具有forwards和backwards效果 */
+        }
+        #first:hover{
+            position:relative;
+            left:40%;
+            top:30%;
+            width:200px;
+            height:200px;
+            border:1px solid #333;
+            border-radius:50%;
+            box-shadow:2px 2px 2px #333;
+            animation-play-state:paused;
+            animation:go 1s;/*动画名字 动画时间 */
+            animation-timing-function:ease-in-out;/*渐显渐隐效果，先加速再减速 */
+            animation-iteration-count: infinite;/*动画次数*/
+            animation-fill-mode:both;
+            animation-delay:1ms;
+        }
+        #second{
+            position:absolute;
+            float:left;
+            width:100px;
+            height:200px;
+            background-color:#000;
+            border:1px solid #333;
+            border-radius:100px 0px 0px 100px;
+        }
+        #fore{
+            position:absolute;
+            top:100px;
+            left:50px;
+            width:100px;
+            height:100px;
+            background-color:#000;
+            border-radius:50%;
+        }
+        #five{
+            position:absolute;
+            right:50px;
+            width:100px;
+            height:100px;
+            background-color:#fff;
+            border-radius:50%;
+        }
+        #six{
+            position:absolute;
+            top:50%;
+            right:50%;
+            width:20px;
+            height:20px;
+            border:1px solid #333;
+            background-color:#fff;
+            border-radius:50%;
+        }
+        #seven{
+            position:absolute;
+            top:50%;
+            left:50%;
+            width:20px;
+            height:20px;
+            background-color:#000;
+            border:1px solid #333;
+            border-radius:50%;
+        }
+        @keyframes go{/*定义动画*/
+            0%{transform:rotate(0deg)}/*css3变换属性*/
+            10%{transform:rotate(36deg)}/*css3变换属性*/
+            20%{transform:rotate(72deg)}
+            30%{transform:rotate(108deg)}
+            40%{transform:rotate(144deg)}
+            50%{transform:rotate(180deg)}
+            60%{transform:rotate(216deg)}
+            70%{transform:rotate(252deg)}
+            80%{transform:rotate(288deg)}
+            90%{transform:rotate(324deg)}
+            100%{transform:rotate(360deg)}
+        }
+        @keyframes go1{/*定义动画*/
+            0%{transform:rotate(0deg)}/*css3变换属性*/
+            10%{transform:rotate(-36deg)}/*css3变换属性*/
+            20%{transform:rotate(-72deg)}
+            30%{transform:rotate(-108deg)}
+            40%{transform:rotate(-144deg)}
+            50%{transform:rotate(-180deg)}
+            60%{transform:rotate(-216deg)}
+            70%{transform:rotate(-252deg)}
+            80%{transform:rotate(-288deg)}
+            90%{transform:rotate(-324deg)}
+            100%{transform:rotate(-360deg)}
+        }
+    </style>
+</HEAD>
+
+<BODY>
+    <div id="first">
+        <div id="second"></div>
+        <div id="fore">
+            <div id="six"></div>
+        </div>
+        <div id="five">
+            <div id="seven"></div>
+        </div>
+    </div>
+</BODY>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+
+</script>
+</HTML>
